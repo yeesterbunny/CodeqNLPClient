@@ -8,7 +8,7 @@ Instantiate `CodeqNLPClient`, and call `analyze(text:, completionHander: )` to s
 
 A playground file is included for demo purposes
 
-*TODO: Add DemoScreenShot*
+![alt text](https://raw.githubusercontent.com/yeesterbunny/CodeqNLPClient/master/Screenshots/DemoScreenShot.png)
 
 ## Annotators
 
