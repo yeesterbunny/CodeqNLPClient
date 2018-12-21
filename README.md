@@ -6,7 +6,7 @@ Swift Interface for [Codeq Natural Language Processing API](https://api.codeq.co
 
 Instantiate `CodeqNLPClient`, and call `analyze(text:, completionHander: )` to send HTTP POST request to Codeq's endpoint. The completionHandler will be invoked with `[Sentence]?` and `Error?` after the request returns.
 
-A playground file is included for demo purposes
+A playground file is included for demo purposes. **NOTE**: Build before running `Demo.playground`
 
 ![alt text](https://raw.githubusercontent.com/yeesterbunny/CodeqNLPClient/master/Screenshots/DemoScreenShot.png)
 
