@@ -42,7 +42,7 @@ Open your project, right-click on the root node, and click **Add Files to "Your 
 
 Add `CodeqNLPClient.xcodeproj`:
 
-![alt text](https://raw.githubusercontent.com/yeesterbunny/CodeqNLPClient/master/Screenshots/SelectFile2.png)
+![alt text](https://raw.githubusercontent.com/yeesterbunny/CodeqNLPClient/master/Screenshots/SelectFile3.png)
 
 Link `CodeqNLPClient.framework` to `Embedded Binaries` and `Linked Frameworks and Libraries`:
 
