@@ -2,7 +2,7 @@
 
 Swift Interface for [Codeq Natural Language Processing API](https://api.codeq.com/)
 
-##Usage
+## Usage
 
 Instantiate `CodeqNLPClient`, and call `analyze(text:, completionHander: )` to send HTTP POST request to Codeq's endpoint. The completionHandler will be invoked with `[Sentence]?` and `Error?` after the request returns.
 
@@ -10,7 +10,7 @@ A playground file is included for demo purposes
 
 *TODO: Add DemoScreenShot*
 
-##Annotators
+## Annotators
 
 This Swift Interface currently support the following annotators:
 
@@ -23,21 +23,21 @@ More annotators will be added in the future.
 
 For a full list of supported annotators by Codeq NLP APIs, please visit [Codeq NLP API Documentation](https://api.codeq.com/api)
 
-##Requirements
+## Requirements
 
 * iOS 12.1
 * Swift 4.2
 * Xcode 10.1
 
-##Installation
+## Installation
 
 *Under Construction*
 
-##Credits
+## Credits
 
 Created and maintained by Allen Yee
 
-##BSD 3-Clause License
+## BSD 3-Clause License
 
 Copyright (c) 2018, Allen Yee
 All rights reserved.
