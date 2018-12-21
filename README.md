@@ -1,6 +1,9 @@
 # CodeqNLPClient
 
-Swift Interface for [Codeq Natural Language Processing API](https://api.codeq.com/)
+[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg)](https://developer.apple.com/swift/)
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-lightgrey.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
+Swift Interface for [Codeq NLP API](https://api.codeq.com/)
 
 ## Usage
 
@@ -30,6 +33,24 @@ For a full list of supported annotators by Codeq NLP APIs, please visit [Codeq N
 * Xcode 10.1
 
 ## Installation
+
+### Manually Embed in Your Project
+
+Open your project, right-click on the root node, and click **Add Files to "Your Project Name"**:
+
+![alt text](https://raw.githubusercontent.com/yeesterbunny/CodeqNLPClient/master/Screenshots/AddFiles.png)
+
+Add `CodeqNLPClient.xcodeproj`:
+
+![alt text](https://raw.githubusercontent.com/yeesterbunny/CodeqNLPClient/master/Screenshots/SelectFile.png)
+
+Link `CodeqNLPClient.framework` to `Embedded Binaries` and `Linked Frameworks and Libraries`:
+
+![alt text](https://raw.githubusercontent.com/yeesterbunny/CodeqNLPClient/master/Screenshots/LinkFramework.gif)
+
+Clean and **build**. You should now be able to `import CodeqNLPClient` and start using the API.
+
+### CocoaPods
 
 *Under Construction*
 
