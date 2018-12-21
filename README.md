@@ -42,11 +42,11 @@ Open your project, right-click on the root node, and click **Add Files to "Your 
 
 Add `CodeqNLPClient.xcodeproj`:
 
-![alt text](https://raw.githubusercontent.com/yeesterbunny/CodeqNLPClient/master/Screenshots/SelectFile.png)
+![alt text](https://raw.githubusercontent.com/yeesterbunny/CodeqNLPClient/master/Screenshots/SelectFile2.png)
 
 Link `CodeqNLPClient.framework` to `Embedded Binaries` and `Linked Frameworks and Libraries`:
 
-![alt text](https://raw.githubusercontent.com/yeesterbunny/CodeqNLPClient/master/Screenshots/LinkFramework.gif)
+![alt text](https://raw.githubusercontent.com/yeesterbunny/CodeqNLPClient/master/Screenshots/LinkFramework2.gif)
 
 Clean and **build**. You should now be able to `import CodeqNLPClient` and start using the API.
 
