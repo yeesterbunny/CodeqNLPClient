@@ -47,10 +47,10 @@ class SentenceTests: XCTestCase {
                     {
                       "position": 0,
                       "raw_sentence": "I really loved this device the first few months I had it and was ready to purchase more in this collection (Big Echo, Show, etc.)",
-                      "speech_act": ["Statement"],
-                      "sentiment": ["Positive"],
+                      "speech_acts": ["Statement"],
+                      "sentiments": ["Positive"],
                       "emotions": ["Joy/Like"],
-                      "sarcastic": "Non-sarcastic"
+                      "sarcasm": "Non-sarcastic"
                     }
                 """
         
@@ -65,8 +65,8 @@ class SentenceTests: XCTestCase {
             XCTAssertNotNil(sentence)
             XCTAssertEqual(sentence.position, 0)
             XCTAssertEqual(sentence.rawSentence, "I really loved this device the first few months I had it and was ready to purchase more in this collection (Big Echo, Show, etc.)")
-            XCTAssertEqual(sentence.speechAct, ["Statement"])
-            XCTAssertEqual(sentence.sentiment, ["Positive"])
+            XCTAssertEqual(sentence.speechActs, ["Statement"])
+            XCTAssertEqual(sentence.sentiments, ["Positive"])
             XCTAssertEqual(sentence.emotions, ["Joy/Like"])
             XCTAssertEqual(sentence.sarcasm, "Non-sarcastic")
         } catch let decodeError {

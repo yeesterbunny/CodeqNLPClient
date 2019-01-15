@@ -48,18 +48,18 @@ class DocumentTests: XCTestCase {
                 {
                   "position": 0,
                   "raw_sentence": "I really loved this device the first few months I had it and was ready to purchase more in this collection (Big Echo, Show, etc.)",
-                  "speech_act": ["Statement"],
-                  "sentiment": ["Positive"],
+                  "speech_acts": ["Statement"],
+                  "sentiments": ["Positive"],
                   "emotions": ["Joy/Like"],
-                  "sarcastic": "Non-sarcastic"
+                  "sarcasm": "Non-sarcastic"
                 },
                 {
                   "position": 1,
                   "raw_sentence": "However, about 6 weeks ago my echo lost the ability to pause and play, which is very frustrating.",
-                  "speech_act": ["Statement"],
-                  "sentiment": ["Negative"],
+                  "speech_acts": ["Statement"],
+                  "sentiments": ["Negative"],
                   "emotions": ["Anger"],
-                  "sarcastic": "Non-sarcastic"
+                  "sarcasm": "Non-sarcastic"
                 }
               ]
             }

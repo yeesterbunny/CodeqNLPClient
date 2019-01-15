@@ -35,16 +35,16 @@ public class Sentence: Decodable {
     enum CodingKeys: String, CodingKey {
         case position
         case rawSentence = "raw_sentence"
-        case sentiment
-        case speechAct = "speech_act"
+        case sentiments
+        case speechActs = "speech_acts"
         case emotions
-        case sarcasm = "sarcastic"
+        case sarcasm
     }
     
     public private(set) var position: Int?
     public private(set) var rawSentence: String?
-    public private(set) var sentiment: [String]?
-    public private(set) var speechAct: [String]?
+    public private(set) var sentiments: [String]?
+    public private(set) var speechActs: [String]?
     public private(set) var emotions: [String]?
     public private(set) var sarcasm: String?
     
@@ -53,8 +53,8 @@ public class Sentence: Decodable {
         
         position = try sentenceValue.decodeIfPresent(Int.self, forKey: .position)
         rawSentence = try sentenceValue.decodeIfPresent(String.self, forKey: .rawSentence)
-        sentiment = try sentenceValue.decodeIfPresent([String].self, forKey: .sentiment)
-        speechAct = try sentenceValue.decodeIfPresent([String].self, forKey: .speechAct)
+        sentiments = try sentenceValue.decodeIfPresent([String].self, forKey: .sentiments)
+        speechActs = try sentenceValue.decodeIfPresent([String].self, forKey: .speechActs)
         emotions = try sentenceValue.decodeIfPresent([String].self, forKey: .emotions)
         sarcasm = try sentenceValue.decodeIfPresent(String.self, forKey: .sarcasm)
     }
@@ -65,11 +65,11 @@ extension Sentence: CustomStringConvertible {
         return """
             rawSentence: \(rawSentence ?? "Not found")
             position: \(position ?? -1)
-            sentiment: \(sentiment ?? ["Not Found"])
-            speechAct: \(speechAct ?? ["Not Found"])
+            sentiments: \(sentiments ?? ["Not Found"])
+            speechActs: \(speechActs ?? ["Not Found"])
             emotions: \(emotions ?? ["Not Found"])
             sarcasm: \(sarcasm ?? "Not Found")
-        
+
         """
     }
 }
