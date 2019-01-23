@@ -73,8 +73,50 @@ class SentenceTests: XCTestCase {
             print("Decode Error: \(decodeError.localizedDescription)")
             XCTAssert(false)
         }
+    }
+    
+    /// Test tokens, tokens_filtered, lemmas, stems, pos_tags, dependencies
+    func testTextProcessing() {
+        let json = """
+                    {
+                        "position": 0,
+                        "raw_sentence": "The hotel location is perfect.",
+                        "tokens": ["The", "hotel", "location", "is", "perfect", "."],
+                        "tokens_filtered": ["hotel", "location", "perfect"],
+                        "lemmas": ["the", "hotel", "location", "be", "perfect", "."],
+                        "stems": ["the", "hotel", "locat", "is", "perfect", "."],
+                        "pos_tags": ["DT", "NN", "NN", "VBZ", "JJ", "."],
+                        "dependencies": [
+                            ["location@@@3", "The@@@1", "det"],
+                            ["location@@@3", "hotel@@@2", "nn"],
+                            ["is@@@4", "location@@@3", "nsubj"],
+                            ["root@@@0", "is@@@4", "root"],
+                            ["is@@@4", "perfect@@@5", "acomp"],
+                            ["is@@@4", ".@@@6", "punct"]
+                        ]
+                    }
+                """
         
-        
+        do {
+            guard let jsonData = json.data(using: .utf16) else {
+                XCTAssert(false)
+                return
+            }
+            let jsonDecoder = JSONDecoder()
+            let sentence = try jsonDecoder.decode(Sentence.self, from: jsonData)
+            
+            XCTAssertNotNil(sentence)
+            XCTAssertEqual(sentence.position, 0)
+            XCTAssertEqual(sentence.rawSentence, "The hotel location is perfect.")
+            XCTAssertEqual(sentence.tokens, ["The", "hotel", "location", "is", "perfect", "."])
+            XCTAssertEqual(sentence.tokensFiltered, ["hotel", "location", "perfect"])
+            XCTAssertEqual(sentence.lemmas, ["the", "hotel", "location", "be", "perfect", "."])
+            XCTAssertEqual(sentence.stems, ["the", "hotel", "locat", "is", "perfect", "."])
+            XCTAssertEqual(sentence.posTags, ["DT", "NN", "NN", "VBZ", "JJ", "."])
+        } catch let decodeError {
+            print("Decode Error: \(decodeError.localizedDescription)")
+            XCTAssert(false)
+        }
     }
 
 }

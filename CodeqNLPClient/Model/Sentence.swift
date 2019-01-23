@@ -39,6 +39,11 @@ public class Sentence: Decodable {
         case speechActs = "speech_acts"
         case emotions
         case sarcasm
+        case tokens
+        case tokensFiltered = "tokens_filtered"
+        case lemmas
+        case stems
+        case posTags = "pos_tags"
     }
     
     public private(set) var position: Int?
@@ -47,6 +52,12 @@ public class Sentence: Decodable {
     public private(set) var speechActs: [String]?
     public private(set) var emotions: [String]?
     public private(set) var sarcasm: String?
+    public private(set) var tokens: [String]?
+    public private(set) var tokensFiltered: [String]?
+    public private(set) var lemmas: [String]?
+    public private(set) var stems: [String]?
+    public private(set) var posTags: [String]?
+    
     
     required public init(from decoder: Decoder) throws {
         let sentenceValue = try decoder.container(keyedBy: CodingKeys.self)
@@ -57,6 +68,11 @@ public class Sentence: Decodable {
         speechActs = try sentenceValue.decodeIfPresent([String].self, forKey: .speechActs)
         emotions = try sentenceValue.decodeIfPresent([String].self, forKey: .emotions)
         sarcasm = try sentenceValue.decodeIfPresent(String.self, forKey: .sarcasm)
+        tokens = try sentenceValue.decodeIfPresent([String].self, forKey: .tokens)
+        tokensFiltered = try sentenceValue.decodeIfPresent([String].self, forKey: .tokensFiltered)
+        lemmas = try sentenceValue.decodeIfPresent([String].self, forKey: .lemmas)
+        stems = try sentenceValue.decodeIfPresent([String].self, forKey: .stems)
+        posTags = try sentenceValue.decodeIfPresent([String].self, forKey: .posTags)
     }
 }
 
@@ -69,7 +85,12 @@ extension Sentence: CustomStringConvertible {
             speechActs: \(speechActs ?? ["Not Found"])
             emotions: \(emotions ?? ["Not Found"])
             sarcasm: \(sarcasm ?? "Not Found")
-
+            tokens: \(tokens ?? ["Not found"])
+            tokensFiltered: \(tokensFiltered ?? ["Not found"])
+            lemmas: \(lemmas ?? ["Not found"])
+            stems: \(stems ?? ["Not found"])
+            posTags: \(posTags ?? ["Not found"])
+        
         """
     }
 }
