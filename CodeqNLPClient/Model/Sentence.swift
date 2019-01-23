@@ -44,6 +44,7 @@ public class Sentence: Decodable {
         case lemmas
         case stems
         case posTags = "pos_tags"
+        case dependencies
     }
     
     public private(set) var position: Int?
@@ -57,6 +58,7 @@ public class Sentence: Decodable {
     public private(set) var lemmas: [String]?
     public private(set) var stems: [String]?
     public private(set) var posTags: [String]?
+    public private(set) var dependencies: [[String]]?
     
     
     required public init(from decoder: Decoder) throws {
@@ -73,6 +75,7 @@ public class Sentence: Decodable {
         lemmas = try sentenceValue.decodeIfPresent([String].self, forKey: .lemmas)
         stems = try sentenceValue.decodeIfPresent([String].self, forKey: .stems)
         posTags = try sentenceValue.decodeIfPresent([String].self, forKey: .posTags)
+        dependencies = try sentenceValue.decodeIfPresent([[String]].self, forKey: .dependencies)
     }
 }
 
@@ -90,6 +93,7 @@ extension Sentence: CustomStringConvertible {
             lemmas: \(lemmas ?? ["Not found"])
             stems: \(stems ?? ["Not found"])
             posTags: \(posTags ?? ["Not found"])
+            dependencies: \(dependencies ?? [["Not found"]])
         
         """
     }

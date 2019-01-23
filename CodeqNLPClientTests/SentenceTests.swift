@@ -113,6 +113,14 @@ class SentenceTests: XCTestCase {
             XCTAssertEqual(sentence.lemmas, ["the", "hotel", "location", "be", "perfect", "."])
             XCTAssertEqual(sentence.stems, ["the", "hotel", "locat", "is", "perfect", "."])
             XCTAssertEqual(sentence.posTags, ["DT", "NN", "NN", "VBZ", "JJ", "."])
+            XCTAssertEqual(sentence.dependencies, [
+                ["location@@@3", "The@@@1", "det"],
+                ["location@@@3", "hotel@@@2", "nn"],
+                ["is@@@4", "location@@@3", "nsubj"],
+                ["root@@@0", "is@@@4", "root"],
+                ["is@@@4", "perfect@@@5", "acomp"],
+                ["is@@@4", ".@@@6", "punct"]
+                ])
         } catch let decodeError {
             print("Decode Error: \(decodeError.localizedDescription)")
             XCTAssert(false)
