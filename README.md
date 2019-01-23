@@ -7,7 +7,7 @@ Swift Interface for [Codeq NLP API](https://api.codeq.com/)
 
 ## Usage
 
-Instantiate `CodeqNLPClient`, and call `analyze(text:, completionHander: )` to send HTTP POST request to Codeq's endpoint. The completionHandler will be invoked with `[Sentence]?` and `Error?` after the request returns.
+Instantiate `CodeqNLPClient`, and call `analyze(text:completionHander: )` to send HTTP POST request to Codeq's endpoint. The completionHandler will be invoked with `[Sentence]?` and `Error?` after the request returns.
 
 A playground file is included for demo purposes. **NOTE**: Build before running `Demo.playground`
 
@@ -21,6 +21,11 @@ This Swift Interface currently support the following annotators:
 * sentiment
 * emotions
 * sarcasm
+* tokens
+* tokens_filtered
+* lemmas
+* stems
+* pos_tags
 
 More annotators will be added in the future.
 
